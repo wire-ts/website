@@ -6,8 +6,8 @@ module.exports = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "logo.png",
-  organizationName: "wire-ts", // Usually your GitHub org/user name.
-  projectName: "wire", // Usually your repo name.
+  organizationName: "wire-ts",
+  projectName: "wire",
   themeConfig: {
     navbar: {
       title: "",
@@ -23,7 +23,7 @@ module.exports = {
           label: "Docs",
           position: "left",
         },
-        { to: "blog", label: "Blog", position: "left" },
+        // { to: "blog", label: "Blog", position: "left" },
         {
           href: "https://github.com/wire-ts/wire",
           label: "GitHub",
@@ -47,7 +47,7 @@ module.exports = {
         },
         blog: {
           showReadingTime: false,
-          editUrl: "https://github.com/wire-ts/website/edit/master/blog/",
+          editUrl: "https://github.com/wire-ts/website/edit/master/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
