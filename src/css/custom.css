@@ -18,7 +18,8 @@ body {
 
 nav,
 footer,
-.hero {
+.hero,
+.menu__list {
   font-family: Jost;
 }
 
@@ -32,13 +33,13 @@ footer,
 
 /* You can override the default Infima variables here. */
 :root {
---ifm-color-primary: #3867d6;
---ifm-color-primary-dark: #2a59c9;
---ifm-color-primary-darker: #2754be;
---ifm-color-primary-darkest: #20459d;
---ifm-color-primary-light: #4e78db;
---ifm-color-primary-lighter: #5a81dd;
---ifm-color-primary-lightest: #7b9ae4;
+  --ifm-color-primary: #3867d6;
+  --ifm-color-primary-dark: #2a59c9;
+  --ifm-color-primary-darker: #2754be;
+  --ifm-color-primary-darkest: #20459d;
+  --ifm-color-primary-light: #4e78db;
+  --ifm-color-primary-lighter: #5a81dd;
+  --ifm-color-primary-lightest: #7b9ae4;
   --ifm-code-font-size: 95%;
 }
 
@@ -47,4 +48,16 @@ footer,
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
+}
+
+.navbar__logo {
+  width: 42px;
+}
+
+.navbar__link {
+  font-weight: bold;
+}
+
+article > header > h1 {
+  font-size: calc(1.375rem + 0.9vw) !important;
 }

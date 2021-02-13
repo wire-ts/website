@@ -8,13 +8,27 @@ import styles from "./styles.module.css";
 
 const features = [
   {
-    title: "Type Safety without Boilerplate",
+    title: "Zero boilerplate",
     // imageUrl: "img/undraw_docusaurus_mountain.svg",
     description: (
       <>
-        It's time to move beyond stringly-typed actions and reducers.
-        <br /> Using TypeScript's advanced type inference, you may even get away
-        with just a single type per file.
+        By removing all friction by design, Wire is optimized for fast
+        iteration. <br />
+        Let the compiler do the work - Wire uses maximum type inference to help
+        you type less.
+      </>
+    ),
+  },
+  {
+    title: "Type Safety",
+    // imageUrl: "img/undraw_docusaurus_mountain.svg",
+    description: (
+      <>
+        Leave stringly-typed code behind and make it <b>impossible</b> to do the
+        wrong thing by design.
+        <br />
+        Not only does Wire enforce functional data flow, it also marks all state
+        as immutable.
       </>
     ),
   },
@@ -65,7 +79,9 @@ function Home() {
       <header className={clsx("hero", styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.customFields.heroTitle}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <p className="hero__subtitle">
+            {siteConfig.customFields.heroSubtitle}
+          </p>
           <div className={styles.buttons}>
             <Link className={clsx(styles.heroButton)} to={useBaseUrl("docs/")}>
               Get Started

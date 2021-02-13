@@ -56,6 +56,8 @@ export default store({ list: [] as Todo[] }).actions({
 });
 ```
 
+And that's it. The data store is now ready to be included in a Root Store. Optionally, you may define thunks (see below).
+
 
 ### Thunks
 
