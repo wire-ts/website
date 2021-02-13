@@ -1,5 +1,5 @@
 module.exports = {
-  title: "Wire",
+  title: "Wire - Type-safe data store for React",
   tagline: "Functional, immutable data flow with no boilerplate. ",
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/",
