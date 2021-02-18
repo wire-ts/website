@@ -7,7 +7,7 @@ module.exports = {
   onBrokenMarkdownLinks: "warn",
   favicon: "logo.png",
   organizationName: "wire-ts",
-  projectName: "wire",
+  projectName: "website",
   themeConfig: {
     navbar: {
       title: "",
@@ -57,7 +57,6 @@ module.exports = {
   ],
   customFields: {
     heroTitle: "Type-safe data store for React",
-    heroSubtitle:
-      "Easily become more productive and leave the boilerplate behind.",
+    heroSubtitle: "Iterate faster and safely manage your state.",
   },
 };
