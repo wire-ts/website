@@ -10,7 +10,7 @@ Here we will create a store for a hypothetical todo-list application.
 Let's start by defining our types. To get started with Wire, we will need to pass an initial state.
 
 ```ts
-import { store } from "wire";
+import { store } from "@wire-ts/wire";
 
 interface Todo {
   id: number;
@@ -32,7 +32,7 @@ To enforce good habits, Wire passes in the current state as an **immutable** obj
 Actions can be asynchronous as well for the common cases of getting and posting data using an API.
 
 ```ts
-import { store } from "wire";
+import { store } from "@wire-ts/wire";
 
 interface Todo {
   id: number;
@@ -66,7 +66,7 @@ Thunks are higher-level functions that can call other actions. Thunks do not ret
 Example:
 
 ```ts
-import { store } from "wire";
+import { store } from "@wire-ts/wire";
 
 interface Todo {
   id: number;
@@ -74,7 +74,7 @@ interface Todo {
   done: boolean;
 }
 
-export default store({ list: [] as Todo[] }).actions({
+const todos = store({ list: [] as Todo[] }).actions({
   add: (state, todo: Todo) => ({
     ...state,
     list: [...state.list, todo],
@@ -88,10 +88,12 @@ export default store({ list: [] as Todo[] }).actions({
     }
   },
 }).thunks({
-  sampleTodos: async (store, someArg: boolean) => {
+  sampleTodos: async (someArg: boolean) => {
     console.log(store.state);
-    store.actions.add({ ... });
+    todos.actions.add({ ... });
     await store.actions.remove(123);
   }
 });
+
+export default todos;
 ```
