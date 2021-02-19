@@ -57,7 +57,7 @@ Class components are connected similarly, but using a different function.
 ```ts
 import React from "react";
 import store from "state";
-import { Props } from "wire"
+import { Props } from "@wire-ts/wire"
 
 const connect = store.connect(root => ({ ...root.todos }));
 
