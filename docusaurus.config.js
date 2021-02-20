@@ -20,7 +20,12 @@ module.exports = {
         {
           to: "docs/",
           activeBasePath: "docs",
-          label: "Docs",
+          label: "Documentation",
+          position: "left",
+        },
+        {
+          to: "comparison/",
+          label: "Comparison",
           position: "left",
         },
         // { to: "blog", label: "Blog", position: "left" },
@@ -56,7 +61,7 @@ module.exports = {
     ],
   ],
   customFields: {
-    heroTitle: "Type-safe data store for React",
-    heroSubtitle: "Iterate faster and safely manage your state.",
+    heroTitle: "The next-gen data store for React",
+    heroSubtitle: "Iterate faster and catch bugs earlier.",
   },
 };
