@@ -1,8 +1,9 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
 .heroBanner {
   padding: 8rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
   border-bottom: 1px solid var(--ifm-color-secondary-lighter);
 }
 
@@ -37,9 +38,6 @@
 }
 
 .buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding-top: 2em;
 }
 

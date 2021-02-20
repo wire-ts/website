@@ -3,7 +3,7 @@ module.exports = {
     Guide: [
       "install",
       "structure",
-      "quick-store",
+      "store",
       "root-store",
       "in-components",
     ],

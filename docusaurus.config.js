@@ -1,7 +1,7 @@
 module.exports = {
   title: "Wire - Type-safe data store for React",
   tagline: "Functional, immutable data flow with no boilerplate. ",
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://wire.js.org",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -9,6 +9,9 @@ module.exports = {
   organizationName: "wire-ts",
   projectName: "website",
   themeConfig: {
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
     navbar: {
       title: "",
       logo: {

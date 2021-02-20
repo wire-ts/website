@@ -20,7 +20,13 @@ const App = () => {
   const {
     state: { list: todos },
     actions: { add, load, remove, modify },
-  } = store.useStore((root) => ({ ...root.todos }));
+  } = store.useStore(root => root.todos);
+
+  // Could also do something like:
+  // store.useStore(root => ({
+  //   items: root.todos.list,
+  //   someAction: root.otherStore.actions.someAction
+  // }));
 
   React.useEffect(() => {
     load();
@@ -33,11 +39,11 @@ const App = () => {
           <input
             type="checkbox"
             checked={todo.done}
-            onChange={(e) => modify(i, { done: e.target.checked })}
+            onChange={(e) => modify(todo.id, { done: e.target.checked })}
           />
           <input
             defaultValue={todo.task}
-            onChange={(e) => modify(i, { task: e.target.value })}
+            onChange={(e) => modify(todo.id, { task: e.target.value })}
           />
         </div>
       ))}
@@ -53,13 +59,12 @@ export default App;
 Class components are connected similarly, but using a different function.
 
 
-
 ```ts
 import React from "react";
 import store from "state";
 import { Props } from "@wire-ts/wire"
 
-const connect = store.connect(root => ({ ...root.todos }));
+const connect = store.connect(root => root.todos);
 
 class App extends React.Component<Props<typeof connect>> {
   render() {

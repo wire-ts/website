@@ -8,8 +8,7 @@ import styles from "./styles.module.css";
 
 const features = [
   {
-    title: "Zero boilerplate",
-    // imageUrl: "img/undraw_docusaurus_mountain.svg",
+    title: "Zero Boilerplate",
     description: (
       <>
         By removing all friction by design, Wire is optimized for fast
@@ -21,7 +20,6 @@ const features = [
   },
   {
     title: "Type Safety",
-    // imageUrl: "img/undraw_docusaurus_mountain.svg",
     description: (
       <>
         Leave stringly-typed code behind and make it <b>impossible</b> to do the
@@ -36,7 +34,7 @@ const features = [
     title: "Batteries Included",
     description: (
       <>
-        Wire comes with <b>async</b> actions, thunks, and a devtools extension.
+        Wire comes with actions, thunks, selectors, and a devtools extension.
         <br />
         Everything you need is already here.
       </>
@@ -72,19 +70,36 @@ function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
   return (
-    <Layout
-      title="Home"
-    >
+    <Layout title="Home">
       <header className={clsx("hero", styles.heroBanner)}>
-        <div className="container">
-          <h1 className="hero__title">{siteConfig.customFields.heroTitle}</h1>
-          <p className="hero__subtitle">
-            {siteConfig.customFields.heroSubtitle}
-          </p>
-          <div className={styles.buttons}>
-            <Link className={clsx(styles.heroButton)} to={useBaseUrl("docs/")}>
-              Get Started
-            </Link>
+        <div className={clsx("container", styles.container)}>
+          <div>
+            <h1 className="hero__title">{siteConfig.customFields.heroTitle}</h1>
+            <p className="hero__subtitle">
+              {siteConfig.customFields.heroSubtitle}
+            </p>
+            <div className={styles.buttons}>
+              <Link
+                className={clsx(styles.heroButton)}
+                to={useBaseUrl("docs/")}
+              >
+                Get Started
+              </Link>
+            </div>
+          </div>
+          <div>
+            <pre>
+              <code
+                dangerouslySetInnerHTML={{
+                  __html: `<b>store</b>({ list: [] as Todo[] }).<b>actions</b>({
+  add: (state, todo: Todo) => ({
+    list: [...state.list, todo]
+  })
+});
+`,
+                }}
+              ></code>
+            </pre>
           </div>
         </div>
       </header>

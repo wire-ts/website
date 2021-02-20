@@ -92,11 +92,9 @@ interface Message {
 
 export default store({ messages: [] as Message[] }).actions({
   send: (state, msg: Message) => ({
-    ...state,
     messages: [...state.messages, msg],
   }),
   delete: (state, timestamp: number) => ({
-    ...state,
     messages: state.messages.filter(
       (message) => message.timestamp !== timestamp
     ),
