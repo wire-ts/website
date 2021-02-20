@@ -31,9 +31,18 @@
   text-decoration: none;
 }
 
-@media screen and (max-width: 966px) {
+@media screen and (max-width: 976px) {
   .heroBanner {
     padding: 2rem;
+  }
+
+  .container {
+    display: block;
+    text-align: center;
+  }
+
+  .container > div:last-child {
+    display: none;
   }
 }
 
@@ -51,6 +60,10 @@
 
 .features .feature:last-child {
   border-bottom: 0;
+}
+
+.features p {
+  max-width: 800px;
 }
 
 .feature {

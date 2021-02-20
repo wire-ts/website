@@ -11,8 +11,7 @@ const features = [
     title: "Zero Boilerplate",
     description: (
       <>
-        By removing all friction by design, Wire is optimized for fast
-        iteration. <br />
+        Removing all friction by design, Wire is optimized for fast iteration.
         Let the compiler do the work - Wire uses maximum type inference to help
         you type less.
       </>
@@ -23,10 +22,8 @@ const features = [
     description: (
       <>
         Leave stringly-typed code behind and make it <b>impossible</b> to do the
-        wrong thing by design.
-        <br />
-        Not only does Wire enforce functional data flow, it also marks all state
-        as immutable.
+        wrong thing. Not only does Wire enforce functional data flow, it also
+        marks all state as immutable.
       </>
     ),
   },
@@ -34,9 +31,8 @@ const features = [
     title: "Batteries Included",
     description: (
       <>
-        Wire comes with actions, thunks, selectors, and a devtools extension.
-        <br />
-        Everything you need is already here.
+        Wire comes with actions, async thunks, selectors, and a devtools
+        extension. Everything you need is already here.
       </>
     ),
   },
@@ -51,17 +47,11 @@ const features = [
   },
 ];
 
-function Feature({ imageUrl, title, description }) {
-  const imgUrl = useBaseUrl(imageUrl);
+function Feature(props: { title: string; description: any }) {
   return (
     <div className={clsx(styles.feature)}>
-      {imgUrl && (
-        <div className="text--center">
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
-        </div>
-      )}
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <h3>{props.title}</h3>
+      <p>{props.description}</p>
     </div>
   );
 }
@@ -104,15 +94,13 @@ function Home() {
         </div>
       </header>
       <main className={clsx("", styles.main)}>
-        {features && features.length > 0 && (
-          <section className={styles.features}>
-            <div className="container">
-              {features.map((props, idx) => (
-                <Feature key={idx} {...props} />
-              ))}
-            </div>
-          </section>
-        )}
+        <section className={styles.features}>
+          <div className="container">
+            {features.map((props, idx) => (
+              <Feature key={idx} {...props} />
+            ))}
+          </div>
+        </section>
       </main>
     </Layout>
   );
