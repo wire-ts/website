@@ -6,7 +6,7 @@ title: Creating a Root Store
 In `src/state/index.ts`:
 
 ```ts
-import { rootStore } from "wire";
+import { rootStore } from "@wire-ts/wire";
 import todos from "./todos";
 // import all your other stores here
 
