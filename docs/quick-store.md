@@ -7,14 +7,6 @@ Here we will create a store for a hypothetical todo-list application.
 
 ### Initial State
 
-```ts
-store({ list: [] as Todo[] }).actions({
-  add: (state, todo: Todo) => ({
-    list: [...state.list, todo]
-  })
-});
-```
-
 Let's start by defining our types. To get started with Wire, we will need to pass an initial state.
 
 ```ts
