@@ -32,10 +32,21 @@ const features = [
     description: (
       <>
         Wire comes with actions, async thunks, selectors, and a devtools
-        extension. Everything you need is already here.
+        extension. Everything you need is already here - no need to install
+        anything else.
       </>
     ),
   },
+  {
+title: "Sophisticated Yet Simple",
+description: (
+  <>
+    There's only one way to do things in Wire - and that's the right way to
+    do it. This makes it super easy to get started, to maintain, and avoids
+    preventable mistakes by junior developers.
+  </>
+),
+},
   {
     title: "React Hooks",
     description: (

@@ -1,5 +1,5 @@
 module.exports = {
-  title: "Wire - Type-safe data store for React",
+  title: "Wire - state management for React and TypeScript - Redux alternative",
   tagline: "Functional, immutable data flow with no boilerplate. ",
   url: "https://wire.js.org",
   baseUrl: "/",
@@ -28,7 +28,7 @@ module.exports = {
         },
         {
           to: "comparison/",
-          label: "Comparison",
+          label: "Comparison with Redux",
           position: "left",
         },
         // { to: "blog", label: "Blog", position: "left" },
@@ -64,7 +64,7 @@ module.exports = {
     ],
   ],
   customFields: {
-    heroTitle: "The next-gen data store for React",
+    heroTitle: "Next-gen state management for React",
     heroSubtitle: "Iterate faster and catch bugs earlier.",
   },
 };
