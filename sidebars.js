@@ -6,6 +6,7 @@ module.exports = {
       "store",
       "root-store",
       "in-components",
+      "devtools"
     ],
   },
 };
