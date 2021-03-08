@@ -8,75 +8,30 @@ Let's compare a subset of the chat app from the official Redux docs, then rewrit
 ## Redux
 
 ```ts
-// src/store/chat/types.ts
-export interface Message {
-  user: string
-  message: string
-  timestamp: number
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+interface Message {
+  user: string;
+  message: string;
+  timestamp: number;
 }
 
-export interface ChatState {
-  messages: Message[]
-}
+const slice = createSlice({
+  name: "messages",
+  initialState: [] as Message[],
+  reducers: {
+    send(state, action: PayloadAction<Message>) {
+      state.push(action.payload);
+    },
+    deleteByTimestamp(state, action: PayloadAction<number>) {
+      const index = state.findIndex((msg) => msg.timestamp === action.payload);
+      if (index >= 0) delete state[index];
+    },
+  },
+});
 
-export const SEND_MESSAGE = 'SEND_MESSAGE'
-export const DELETE_MESSAGE = 'DELETE_MESSAGE'
-
-interface SendMessageAction {
-  type: typeof SEND_MESSAGE
-  payload: Message
-}
-
-interface DeleteMessageAction {
-  type: typeof DELETE_MESSAGE
-  meta: {
-    timestamp: number
-  }
-}
-
-export type ChatActionTypes = SendMessageAction | DeleteMessageAction
-
-// src/store/chat/actions.ts
-export function sendMessage(newMessage: Message): ChatActionTypes {
-  return {
-    type: SEND_MESSAGE,
-    payload: newMessage
-  }
-}
-
-export function deleteMessage(timestamp: number): ChatActionTypes {
-  return {
-    type: DELETE_MESSAGE,
-    meta: {
-      timestamp
-    }
-  }
-}
-
-// src/store/chat/reducers.ts
-const initialState: ChatState = {
-  messages: []
-}
-
-export function chatReducer(
-  state = initialState,
-  action: ChatActionTypes
-): ChatState {
-  switch (action.type) {
-    case SEND_MESSAGE:
-      return {
-        messages: [...state.messages, action.payload]
-      }
-    case DELETE_MESSAGE:
-      return {
-        messages: state.messages.filter(
-          message => message.timestamp !== action.meta.timestamp
-        )
-      }
-    default:
-      return state
-  }
-}
+export default slice.reducer;
+export const { send, deleteByTimestamp } = slice.actions;
 ```
 
 ## Wire
